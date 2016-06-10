@@ -17,7 +17,7 @@ enable:
 	systemctl enable printd.service
 
 package:
-	tar -cvvzf printd.tgz Makefile README.txt printd.py printd.conf printd.service
+	tar -cvvzf printd.tgz Makefile README.txt LICENSE.txt printd.py printd.conf printd.service
 
 clean:
 	-rm printd.tgz
