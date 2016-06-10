@@ -1,0 +1,20 @@
+
+[Unit]
+Description=Automatically print received emails via CUPS
+Wants=network-online.target printer.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=printd
+Group=printd
+WorkingDirectory=/tmp
+ExecStart=/usr/local/lib/printd.py
+Restart=always
+RestartSec=60
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+
